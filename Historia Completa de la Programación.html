@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Historia de la Programación</title>
+<style>
+    :root{
+        --color-1800s:#8e44ad;
+        --color-1900s:#3498db;
+        --color-1930s:#1abc9c;
+        --color-1940s:#f39c12;
+        --color-1950s:#e74c3c;
+        --color-1960s:#2ecc71;
+        --color-1970s:#d35400;
+        --color-1980s:#9b59b6;
+        --color-1990s:#e67e22;
+        --color-2000s:#27ae60;
+        --color-2010s:#c0392b;
+        --bg:#f5f5f5; --text:#333; --muted:#666; --card:#fff; --shadow:0 4px 6px rgba(0,0,0,.1);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+    body{background-color:var(--bg);color:var(--text);line-height:1.6;padding:20px}
+    header{text-align:center;margin-bottom:30px;padding:20px;background:#2c3e50;color:#fff;border-radius:8px}
+    h1{font-size:2rem;margin-bottom:10px}
+    .subtitle{font-size:1.1rem;opacity:.9}
+    .timeline-container{max-width:1000px;margin:0 auto}
+
+    /* Acordeones */
+    details.timeline-section{
+        margin-bottom:18px;border-radius:10px;overflow:hidden;background:transparent;
+        box-shadow:var(--shadow);
+    }
+    summary.section-header{
+        list-style:none;cursor:pointer;
+        padding:16px 20px;font-weight:700;font-size:1.05rem;color:#fff;
+        position:relative;display:flex;align-items:center;gap:10px;
+        background:var(--section-color,#2c3e50);
+    }
+    summary.section-header::-webkit-details-marker{display:none}
+    .chev{
+        margin-left:auto;transition:transform .25s ease;
+        width:12px;height:12px;border-right:2px solid #fff;border-bottom:2px solid #fff;
+        transform:rotate(45deg);
+    }
+    details[open] summary .chev{transform:rotate(-135deg)}
+    .section-content{padding:20px;background:var(--card)}
+    .section-content p{margin-bottom:15px}
+    .section-content ul{padding-left:20px;margin-bottom:15px}
+    .section-content li{margin-bottom:8px}
+
+    .person-card{
+        background:#f9f9f9;border-left:4px solid #2c3e50;padding:15px;margin:15px 0;border-radius:0 6px 6px 0
+    }
+    .person-name{font-weight:700;margin-bottom:5px;color:#2c3e50}
+    .person-dates{font-style:italic;color:var(--muted);margin-bottom:10px}
+
+    /* FAQ como acordeón también */
+    .faq details{box-shadow:0 2px 4px rgba(0,0,0,.05);border-radius:8px;margin-bottom:14px;overflow:hidden}
+    .faq summary{background:#2c3e50;color:#fff;padding:14px 16px;font-weight:700;cursor:pointer;display:flex;gap:10px;align-items:center}
+    .faq .content{background:#fff;padding:18px}
+
+    /* Video responsivo */
+    .video-wrap{position:relative;width:100%;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000}
+    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    footer{text-align:center;margin-top:40px;padding:20px;color:var(--muted);font-size:.9rem}
+
+    @media (max-width:768px){
+        h1{font-size:1.8rem}
+        summary.section-header{font-size:1rem;padding:12px 15px}
+        .section-content{padding:15px}
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Historia Completa de la Programación</h1>
+    <p class="subtitle">Desde Ada Lovelace hasta los lenguajes modernos</p>
+</header>
+
+<div class="timeline-container">
+    <!-- Siglo XIX -->
+    <details class="timeline-section" open style="--section-color: var(--color-1800s);">
+        <summary class="section-header">
+            1833: Los Orígenes - Ada Lovelace y Charles Babbage
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>La historia de la programación comienza antes de que existieran las computadoras modernas, con los trabajos teóricos de Charles Babbage y Ada Lovelace en Inglaterra.</p>
+            <ul>
+                <li><strong>Charles Babbage</strong> concibió la idea de una "máquina analítica", precursora de las computadoras modernas.</li>
+                <li><strong>Ada Lovelace</strong>, al traducir las notas sobre la máquina de Babbage, añadió sus propias observaciones que incluían lo que se considera el primer algoritmo destinado a ser procesado por una máquina.</li>
+                <li>Estos algoritmos son considerados el primer programa de computadora, aunque la máquina nunca fue construida en su época.</li>
+                <li>Ada también desarrolló conceptos tempranos de inteligencia artificial.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Ada Lovelace (1815-1852)</div>
+                <div class="person-dates">Matemática y escritora británica</div>
+                <p>Reconocida como la primera programadora de la historia. Trabajó con Charles Babbage en su máquina analítica y escribió el primer algoritmo destinado a ser procesado por una máquina.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Charles Babbage (1791-1871)</div>
+                <div class="person-dates">Matemático y científico inglés</div>
+                <p>Considerado el "padre de la computación". Diseñó la máquina analítica, un dispositivo mecánico para realizar cálculos complejos que nunca fue construido completamente durante su vida.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 1930 -->
+    <details class="timeline-section" style="--section-color: var(--color-1930s);">
+        <summary class="section-header">
+            1936-1937: Fundamentos Teóricos - Turing y Shannon
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>Un siglo después de los trabajos de Lovelace y Babbage, los fundamentos teóricos de la computación moderna fueron establecidos.</p>
+            <ul>
+                <li><strong>1936:</strong> Alan Turing propone la teoría de la "Máquina Universal", capaz de resolver cualquier problema computacional si se le dan las instrucciones adecuadas.</li>
+                <li>De esta teoría surge el concepto de "Turing completo", que describe un lenguaje capaz de programar dicha máquina universal.</li>
+                <li><strong>1937:</strong> Claude Shannon, en su tesis, demuestra que cualquier operación matemática puede resolverse mediante el álgebra booleana (usando solo 1 y 0).</li>
+                <li>Este trabajo sienta las bases de cómo las computadoras procesan la información a nivel fundamental.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Alan Turing (1912-1954)</div>
+                <div class="person-dates">Matemático, lógico y criptógrafo británico</div>
+                <p>Padre teórico de la computación moderna. Su concepto de Máquina Universal sentó las bases para la teoría de la computabilidad y la inteligencia artificial.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Claude Shannon (1916-2001)</div>
+                <div class="person-dates">Matemático e ingeniero estadounidense</div>
+                <p>Fundador de la teoría de la información. Su tesis demostró cómo el álgebra booleana podía aplicarse al diseño de circuitos electrónicos, base de la computación digital.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 1940 -->
+    <details class="timeline-section" style="--section-color: var(--color-1940s);">
+        <summary class="section-header">
+            1946: ENIAC y las Primeras Programadoras
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>La primera computadora electrónica digital de propósito general y las mujeres que la programaron.</p>
+            <ul>
+                <li>ENIAC (Electronic Numerical Integrator and Computer) fue la primera computadora electrónica digital de propósito general.</li>
+                <li>Era una máquina enorme de más de 30 toneladas.</li>
+                <li>Fue programada por un grupo de mujeres conocidas como "las mujeres de ENIAC".</li>
+                <li>Su trabajo consistía en realizar cálculos para el lanzamiento de misiles durante la Segunda Guerra Mundial.</li>
+                <li>Originalmente no fueron invitadas a la demostración de ENIAC y su contribución no fue reconocida hasta 50 años después.</li>
+            </ul>
+            <p><strong>Métodos de programación en esta época:</strong></p>
+            <ul>
+                <li>Programar implicaba manipular cables físicamente, conectando y desconectando componentes.</li>
+                <li>También se usaban interruptores para configurar la máquina.</li>
+                <li>Posteriormente se introdujeron las tarjetas perforadas, donde un agujero representaba un 0 y la parte no perforada un 1.</li>
+                <li>Este proceso era extremadamente tedioso y lento.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Las Mujeres de ENIAC</div>
+                <div class="person-dates">Década de 1940</div>
+                <p>Grupo de seis programadoras (Kay McNulty, Betty Jennings, Betty Snyder, Marlyn Wescoff, Fran Bilas y Ruth Lichterman) que trabajaron en la primera computadora electrónica digital. Su trabajo fue fundamental pero no reconocido durante décadas.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 1950 -->
+    <details class="timeline-section" style="--section-color: var(--color-1950s);">
+        <summary class="section-header">
+            Década de 1950: Primeros Lenguajes de Programación
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>La década que vio nacer los primeros lenguajes de programación modernos y conceptos fundamentales.</p>
+            <h3>1952: El Primer Compilador - Grace Hopper</h3>
+            <ul>
+                <li>Grace Hopper, frustrada con la programación en ensamblador, creó el primer compilador.</li>
+                <li>Su objetivo era poder programar en inglés, y que el compilador tradujera estas instrucciones a lenguaje máquina.</li>
+                <li>Este fue el primer paso hacia los lenguajes de programación modernos.</li>
+            </ul>
+            <h3>1957: FORTRAN - El Primer Lenguaje de Alto Nivel</h3>
+            <ul>
+                <li>FORTRAN (Formula Translating System) fue el primer lenguaje de programación de alto nivel moderno.</li>
+                <li>Creado por John Backus en IBM para facilitar la programación científica y de ingeniería.</li>
+                <li>Permitió abstraer las complejidades del lenguaje máquina.</li>
+                <li>Sigue vigente hoy en día en ciertas aplicaciones científicas.</li>
+            </ul>
+            <h3>1959: COBOL - Lenguaje para Negocios</h3>
+            <ul>
+                <li>COBOL (Common Business-Oriented Language) fue el segundo lenguaje de programación moderno.</li>
+                <li>Fue el primer lenguaje diseñado para ser portable entre diferentes computadoras.</li>
+                <li>Hoy sigue siendo uno de los 50 lenguajes más usados, especialmente en sistemas bancarios.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Grace Hopper (1906-1992)</div>
+                <div class="person-dates">Científica de la computación y militar estadounidense</div>
+                <p>Pionera en programación que desarrolló el primer compilador. Popularizó la idea de los lenguajes de programación independientes de la máquina, lo que llevó al desarrollo de COBOL.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">John Backus (1924-2007)</div>
+                <div class="person-dates">Científico de la computación estadounidense</div>
+                <p>Líder del equipo que desarrolló FORTRAN en IBM y coautor de la forma Backus-Naur.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 1960 -->
+    <details class="timeline-section" style="--section-color: var(--color-1960s);">
+        <summary class="section-header">
+            Década de 1960: Expansión y Diversificación
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>Una década de innovación que vio surgir lenguajes para diferentes propósitos.</p>
+            <h3>1960: LISP - Inteligencia Artificial</h3>
+            <ul>
+                <li>Creado para manejar listas y utilizado en inteligencia artificial.</li>
+                <li>Introdujo conceptos modernos como condicionales, recolector de basura y recursividad.</li>
+            </ul>
+            <h3>1964: BASIC - Programación para Todos</h3>
+            <ul>
+                <li>Diseñado para la educación y hacer la programación accesible.</li>
+                <li>Dio origen a Visual Basic en 1991.</li>
+            </ul>
+            <h3>1969: Lenguaje B - Precursor de C</h3>
+            <ul>
+                <li>Desarrollado por Ken Thompson en los laboratorios Bell, simplificación de BCPL.</li>
+                <li>Fue lenguaje inicial de UNIX.</li>
+            </ul>
+            <h3>1970: UNIX - Sistema Operativo Revolucionario</h3>
+            <ul>
+                <li>UNIX fue revolucionario por su diseño portable.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Ken Thompson (1943-)</div>
+                <div class="person-dates">Informático estadounidense</div>
+                <p>Creador del lenguaje B y co-creador de Unix. Posteriormente participó en Go.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 1970 -->
+    <details class="timeline-section" style="--section-color: var(--color-1970s);">
+        <summary class="section-header">
+            Década de 1970: Revolución de las Computadoras Personales
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>La década que vio nacer la computación personal y lenguajes fundamentales.</p>
+            <h3>1972: Lenguaje C - El Lenguaje de Sistemas</h3>
+            <ul>
+                <li>Lenguaje de nivel medio, cercano al hardware y altamente portable.</li>
+            </ul>
+            <h3>1973: Altair 8800 - Primera Computadora Personal</h3>
+            <ul>
+                <li>La primera computadora personal disponible comercialmente; carecía de sistema operativo.</li>
+            </ul>
+            <h3>1975: Altair BASIC - Nace la Industria del Software</h3>
+            <ul>
+                <li>Paul Allen y Bill Gates crean Altair BASIC, inicio de la industria del software comercial.</li>
+            </ul>
+            <h3>1978: SQL - Bases de Datos Relacionales</h3>
+            <ul>
+                <li>Basado en la teoría de Edgar Codd; Oracle lo populariza.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Dennis Ritchie (1941-2011)</div>
+                <div class="person-dates">Informático estadounidense</div>
+                <p>Creador del lenguaje C y co-creador de Unix. Premio Turing 1983.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Bill Gates (1955-)</div>
+                <div class="person-dates">Empresario y filántropo estadounidense</div>
+                <p>Cofundador de Microsoft.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Paul Allen (1953-2018)</div>
+                <div class="person-dates">Empresario e inversor estadounidense</div>
+                <p>Cofundador de Microsoft junto a Bill Gates.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Edgar Codd (1923-2003)</div>
+                <div class="person-dates">Informático británico</div>
+                <p>Creador del modelo relacional para bases de datos.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 1980 -->
+    <details class="timeline-section" style="--section-color: var(--color-1980s);">
+        <summary class="section-header">
+            Década de 1980: Orientación a Objetos y Nuevos Paradigmas
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>La década que introdujo la POO y lenguajes para sistemas distribuidos.</p>
+            <h3>1983: C++ - Extensión de C con Orientación a Objetos</h3>
+            <ul>
+                <li>Usado para aplicaciones de sistema, SO y embebidos.</li>
+            </ul>
+            <h3>1986: Erlang - Sistemas Distribuidos</h3>
+            <ul>
+                <li>Desarrollado por Ericsson para sistemas tolerantes a fallos.</li>
+            </ul>
+            <h3>1987: Perl - La Web Dinámica Temprana</h3>
+            <ul>
+                <li>Protagonista con CGI en la web temprana.</li>
+            </ul>
+            <h3>1988: NeXTSTEP y Objective-C</h3>
+            <ul>
+                <li>Steve Jobs funda NeXT y crea NeXTSTEP con Objective-C.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Bjarne Stroustrup (1950-)</div>
+                <div class="person-dates">Informático danés</div>
+                <p>Creador de C++.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Steve Jobs (1955-2011)</div>
+                <div class="person-dates">Empresario y visionario estadounidense</div>
+                <p>Cofundador de Apple y fundador de NeXT.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 1990 -->
+    <details class="timeline-section" style="--section-color: var(--color-1990s);">
+        <summary class="section-header">
+            Década de 1990: La Revolución de Internet
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>La década que vio el surgimiento de la web y lenguajes que la harían posible.</p>
+            <h3>1991: Python y Visual Basic</h3>
+            <ul>
+                <li><strong>Python:</strong> Sintaxis sencilla y gran versatilidad.</li>
+                <li><strong>Visual Basic:</strong> Lanzado por Microsoft, basado en BASIC.</li>
+            </ul>
+            <h3>1994: PHP - Dinamismo en la Web</h3>
+            <ul>
+                <li>Integración de lógica en HTML; dominó la web en los 90/2000.</li>
+            </ul>
+            <h3>1995: Java y JavaScript</h3>
+            <ul>
+                <li><strong>Java:</strong> Multiplataforma (“write once, run anywhere”).</li>
+                <li><strong>JavaScript:</strong> Creado por Brendan Eich en Netscape.</li>
+            </ul>
+            <h3>1997: Apple adopta Objective-C</h3>
+            <ul>
+                <li>Apple compra NeXT y adopta Objective-C en su software.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Guido van Rossum (1956-)</div>
+                <div class="person-dates">Programador holandés</div>
+                <p>Creador de Python.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Brendan Eich (1961-)</div>
+                <div class="person-dates">Programador estadounidense</div>
+                <p>Creador de JavaScript en 1995.</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">James Gosling (1955-)</div>
+                <div class="person-dates">Informático canadiense</div>
+                <p>Padre de Java.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 2000 -->
+    <details class="timeline-section" style="--section-color: var(--color-2000s);">
+        <summary class="section-header">
+            Década de 2000: Multiplataforma y Web Moderna
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>La década que consolidó el desarrollo web y móvil.</p>
+            <h3>2001: C# - El Lenguaje de Microsoft</h3>
+            <ul>
+                <li>Lenguaje multi-paradigma y multiplataforma. Usado en escritorio, móvil, web y videojuegos (Unity).</li>
+            </ul>
+            <h3>2008: HTML5 - Web Moderna</h3>
+            <ul>
+                <li>Introdujo semántica y APIs potentes, impulsando el desarrollo moderno.</li>
+            </ul>
+            <h3>2000s: Dart - Intento de Google de Reemplazar JS</h3>
+            <ul>
+                <li>Resurge con Flutter para apps multiplataforma.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Anders Hejlsberg (1960-)</div>
+                <div class="person-dates">Ingeniero de software danés</div>
+                <p>Principal diseñador de C#; más tarde impulsó TypeScript.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Década de 2010 -->
+    <details class="timeline-section" style="--section-color: var(--color-2010s);">
+        <summary class="section-header">
+            Década de 2010: Seguridad, Concurrencia y Productividad
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <p>Lenguajes que abordan problemas de la programación moderna.</p>
+            <h3>2010: Rust y Go</h3>
+            <ul>
+                <li><strong>Rust:</strong> Seguridad de memoria para reemplazar C/C++ en muchos casos.</li>
+                <li><strong>Go:</strong> Simple, eficiente y con concurrencia nativa.</li>
+            </ul>
+            <h3>2012: TypeScript - JavaScript Tipado</h3>
+            <ul>
+                <li>Añade tipado estático y mejora la escalabilidad en grandes apps.</li>
+            </ul>
+            <h3>2014: Swift - El Lenguaje de Apple</h3>
+            <ul>
+                <li>Reemplazo moderno para Objective-C; interoperable.</li>
+            </ul>
+            <h3>2016: Kotlin - Sucesor de Java para Android</h3>
+            <ul>
+                <li>Interoperable con Java; oficial en Android desde 2017.</li>
+            </ul>
+            <div class="person-card">
+                <div class="person-name">Graydon Hoare</div>
+                <div class="person-dates">Programador canadiense</div>
+                <p>Diseñador principal de Rust (Mozilla Research).</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Robert Griesemer, Rob Pike y Ken Thompson</div>
+                <div class="person-dates">Ingenieros de Google</div>
+                <p>Creadores de Go (Golang).</p>
+            </div>
+            <div class="person-card">
+                <div class="person-name">Chris Lattner (1978-)</div>
+                <div class="person-dates">Ingeniero de software estadounidense</div>
+                <p>Creador principal de Swift, y de LLVM/Clang.</p>
+            </div>
+        </div>
+    </details>
+
+    <!-- Preguntas Frecuentes -->
+    <details class="timeline-section" style="--section-color:#2c3e50;">
+        <summary class="section-header">
+            Preguntas Frecuentes
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content faq">
+            <details>
+                <summary>¿Quiénes fueron las figuras clave en los inicios de la programación? <span class="chev" aria-hidden="true" style="border-color:#fff;margin-left:auto"></span></summary>
+                <div class="content">
+                    Las figuras clave incluyen a Charles Babbage (padre de la computación), Ada Lovelace (primera programadora), Alan Turing (teoría de la computación) y Claude Shannon (álgebra booleana). En la era moderna, Grace Hopper (primer compilador) y John Backus (FORTRAN) fueron pioneros.
+                </div>
+            </details>
+            <details>
+                <summary>¿Cómo se programaba antes de los lenguajes de alto nivel? <span class="chev" aria-hidden="true" style="border-color:#fff;margin-left:auto"></span></summary>
+                <div class="content">
+                    Inicialmente se manipulaban cables e interruptores; luego tarjetas perforadas con código binario. El ensamblador fue un avance, pero ligado a cada arquitectura.
+                </div>
+            </details>
+            <details>
+                <summary>¿Cuál fue el primer lenguaje de programación moderno? <span class="chev" aria-hidden="true" style="border-color:#fff;margin-left:auto"></span></summary>
+                <div class="content">
+                    FORTRAN (1957), orientado a la computación científica, abstrajo el lenguaje máquina.
+                </div>
+            </details>
+            <details>
+                <summary>¿Qué impacto tuvo la Altair 8800 en la industria del software? <span class="chev" aria-hidden="true" style="border-color:#fff;margin-left:auto"></span></summary>
+                <div class="content">
+                    La creación de Altair BASIC por Gates y Allen marcó el inicio del software comercial y del debate sobre software propietario vs. libre.
+                </div>
+            </details>
+            <details>
+                <summary>¿Por qué C es tan importante? <span class="chev" aria-hidden="true" style="border-color:#fff;margin-left:auto"></span></summary>
+                <div class="content">
+                    Equilibra control cercano al hardware con legibilidad, y su portabilidad lo hizo clave en sistemas operativos y software de sistema.
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- Explicación visual (URL oculta) -->
+    <details class="timeline-section" style="--section-color:#2c3e50;">
+        <summary class="section-header">
+            Explicación visual del documento (video)
+            <span class="chev" aria-hidden="true"></span>
+        </summary>
+        <div class="section-content">
+            <div class="video-wrap">
+                <!-- URL original ocultada; usamos el embed -->
+                <iframe 
+                    src="https://www.youtube.com/embed/0yL_loiMbFI"
+                    title="Explicación visual - Historia de la Programación"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p style="margin-top:12px">
+                <a href="https://www.youtube.com/watch?v=0yL_loiMbFI" target="_blank" rel="noopener noreferrer">
+                    Ver en YouTube
+                </a>
+            </p>
+        </div>
+    </details>
+</div>
+
+<footer>
+    <p>Historia de la Programación - Cronología Completa</p>
+    <p>© 2025 - Todos los derechos reservados</p>
+</footer>
+</body>
+</html>
